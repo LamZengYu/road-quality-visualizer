@@ -1,0 +1,51 @@
+# --- Dependencies (per workspace) -------------------------------------------
+node_modules/
+
+# --- Build output -----------------------------------------------------------
+dist/
+build/
+*.tsbuildinfo
+
+# --- Env / secrets ----------------------------------------------------------
+.env
+.env.local
+*.local
+# keep .env template files
+!.env.example
+
+# --- Design / study documents (kept local, not pushed) ----------------------
+docs/
+*.drawio.bkp
+.$*.drawio.bkp
+
+# --- Python (ml/) -----------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- ML artifacts (large; re-exportable from the Colab notebook) ------------
+ml/models/weights/
+ml/models/exported/
+ml/data/raw/
+ml/data/datasets/
+*.pt
+*.tflite
+*.onnx
+# (Note: backend/models/pothole.onnx is intentionally NOT committed — drop the
+# file in manually after re-exporting from ml/notebooks/train_pothole.ipynb.)
+
+# --- Editor / OS ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# --- Scaffolding leftovers --------------------------------------------------
+# snapshot from the original mobile/ scaffold attempt
+mobile_stubs_backup/
+
+# --- Mobile bundles + caches (mobile/.gitignore covers the rest) ------------
+mobile/**/*.jsbundle
+mobile/**/.metro-health-check*

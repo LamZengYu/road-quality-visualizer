@@ -1,0 +1,2 @@
+Place pothole.onnx here (re-export from Colab: `YOLO(best).export(format='onnx')`).
+This folder is gitignored except for this file.

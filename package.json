@@ -1,0 +1,11 @@
+{
+  "name": "road-quality-visualizer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Road quality visualizer based on pothole detection",
+  "workspaces": [
+    "shared",
+    "backend",
+    "web"
+  ]
+}

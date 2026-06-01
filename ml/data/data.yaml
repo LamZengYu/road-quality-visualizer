@@ -1,0 +1,8 @@
+path: ./datasets/potholes
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: pothole_minor
+  1: pothole_moderate
+  2: pothole_severe

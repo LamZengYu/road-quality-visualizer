@@ -1,0 +1,262 @@
+:root {
+  --bg: #f5f5f7;
+  --card: #ffffff;
+  --border: #e5e5ea;
+  --text: #1d1d1f;
+  --muted: #6b6b70;
+  --primary: #2c3e50;
+  --accent: #3498db;
+  --error: #c0392b;
+}
+
+* {
+  box-sizing: border-box;
+}
+html, body, #root {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+h1 { font-size: 24px; margin: 0 0 8px; }
+h2 { font-size: 18px; margin: 24px 0 8px; }
+h3 { font-size: 14px; font-weight: 600; margin: 0 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+p { margin: 0 0 12px; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.muted { color: var(--muted); }
+.error { color: var(--error); }
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.brand {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--primary);
+}
+.brand:hover { text-decoration: none; }
+
+.page {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 24px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.back:hover { background: #f5f5f5; text-decoration: none; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  background: #fafafa;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+tr:last-child td { border-bottom: none; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+button:hover:not(:disabled) { filter: brightness(1.1); }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+button.secondary { background: #95a5a6; }
+
+.topbar button { width: auto; margin: 0; padding: 6px 14px; }
+
+.header-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.header-link:hover { background: #f5f5f5; text-decoration: none; }
+
+input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+.login-box {
+  max-width: 360px;
+  margin: 64px auto;
+  background: var(--card);
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* --- Map legend (Phase 6, path detail) --- */
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.legend-line { display: inline-flex; align-items: center; gap: 6px; }
+.legend-swatch { display: inline-block; width: 22px; height: 8px; border-radius: 2px; }
+.legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+.legend-hint { margin-left: auto; font-style: italic; }
+
+/* --- Hole table row interactions --- */
+.row-clickable:hover { background: #fafafa; }
+.row-selected {
+  background: #fff8d9 !important;
+  outline: 2px solid #f1c40f;
+  outline-offset: -2px;
+}
+
+/* --- Filter bar (Phase 6, map detail) --- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 18px;
+  margin-top: 12px;
+  padding: 12px 14px;
+}
+.filter-group { display: flex; flex-direction: column; gap: 4px; }
+.filter-group label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.filter-group input[type="date"] {
+  margin-bottom: 0;
+  padding: 6px 8px;
+  font-size: 13px;
+  width: 150px;
+}
+.sev-checks { display: flex; gap: 8px; }
+.sev-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.sev-check input { margin: 0; width: auto; }
+.sev-pill {
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 11px;
+}
+.sev-minor { background: #f1c40f; color: #4a3c00; }
+.sev-moderate { background: #e67e22; }
+.sev-severe { background: #e74c3c; }
+.filter-reset {
+  width: auto !important;
+  padding: 6px 12px !important;
+  margin: 0 !important;
+}
+.filter-hint { font-size: 12px; margin-top: 6px; margin-bottom: 0; }
+
+/* --- Row actions + page header (Phase 6 bundle 4) --- */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.header-actions { display: flex; gap: 6px; }
+.row-actions { display: inline-flex; gap: 6px; }
+.row-action {
+  width: auto !important;
+  margin: 0 !important;
+  padding: 4px 10px !important;
+  font-size: 12px !important;
+  background: white !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+.row-action:hover:not(:disabled) { background: #f5f5f5 !important; filter: none !important; }
+.row-action-danger { color: var(--error) !important; border-color: #f1c6c0 !important; }
+.row-action-danger:hover:not(:disabled) { background: #fdecea !important; }
+
+.empty-box {
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 12px;
+}

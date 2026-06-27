@@ -73,7 +73,8 @@ export async function updateMeta(
   fields: { name?: string; visibility?: Visibility }
 ): Promise<void> {
   const sets: string[] = [];
-  const params: Record<string, unknown> = { id: mapId, uid: userId };
+
+  const params: Record<string, any> = { id: mapId, uid: userId };
   if (fields.name !== undefined) {
     sets.push("name = :name");
     params.name = fields.name;

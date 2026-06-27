@@ -1,0 +1,40 @@
+# Workspace artefacts — never enter any Docker image
+**/node_modules/
+**/dist/
+**/build/
+**/.cache/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Secrets — never bake into an image
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Other workspaces — backend image doesn't need any of these
+mobile/
+web/
+ml/
+mobile_stubs_backup/
+
+# Docs (kept local anyway, but defense in depth)
+docs/
+
+# CI / Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Logs + tmp
+**/*.log
+**/tmp/
